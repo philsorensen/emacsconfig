@@ -1,0 +1,11 @@
+# ignore auto-save-list directory
+auto-save-list
+session.*
+
+# ignore local custimization files
+emacs-custom.el
+emacs-local.el
+
+# ignore backup files, compiled files, etc
+*.elc
+*~
