@@ -10,13 +10,10 @@
 ;; old versions are dropped or added.
 ;;
 
-;; TODO -- set variable with local paths so only one place needs
-;; changing to change base directory
 
-
-;; Add ~/.emacs.d/ to search path (change to user-emacs-directory)
+;; Add ~/.emacs.d/ ( user-emacs-directory) to search path
 ;;
-(setq load-path (append load-path '("~/.emacs.d/"))) 
+(setq load-path (append load-path user-emacs-directory))
 
 
 ;; Global editor changes (some are defaults in later versions) 
