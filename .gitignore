@@ -9,3 +9,6 @@ emacs-local.el
 # ignore backup files, compiled files, etc
 *.elc
 *~
+
+# ignore downloaded, copied, or generated files
+schema/locate.rnc

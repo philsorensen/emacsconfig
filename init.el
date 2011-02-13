@@ -36,6 +36,20 @@
 	    (setq indent-tabs-mode nil)))
 
 
+;; nXML mode customizations
+;;
+;; redefine paths for schema files (don't use default installed schemas)
+(setq rng-schema-locating-files 
+      (list "schemas.xml" 
+	    (expand-file-name "schema/schemas.xml" user-emacs-directory)))
+(setq rng-schema-locating-file-schema-file 
+      (expand-file-name "schema/locate.rnc" user-emacs-directory))
+
+;; add file extensions to match for nXML mode 
+(setq auto-mode-alist 
+      (cons '("\\.\\(xml\\)\\'" . nxml-mode) auto-mode-alist))
+
+ 
 ;; Local Changes (not stored in version control)
 ;;
 

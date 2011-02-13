@@ -24,6 +24,12 @@ for file in .emacs .emacs.el .emacs.elc; do
 done
 
 
+# copy schema files from emacs DATA directory
+for file in locate.rnc; do
+    cp ${DATA}/schema/${file} schema/
+done
+
+
 # check/create emacs-custom.el and emacs-local.el
 if [ ! -r emacs-custom.el ]; then
     touch emacs-custom.el
@@ -31,5 +37,6 @@ fi
 if [ ! -r emacs-local.el ]; then
     touch emacs-local.el
 fi
+
 
 popd

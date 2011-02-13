@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- 
+Custom schema locating file (see the documentation or default file for
+addition help)
+
+Current formats:
+  nXML locating rules
+ -->
+
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+  <transformURI fromPattern="*.xml" toPattern="*.rnc"/>
+
+  <namespace ns="http://thaiopensource.com/ns/locating-rules/1.0"
+	     uri="locate.rnc"/>
+
+  <documentElement localName="locatingRules" uri="locate.rnc"/>
+</locatingRules>
