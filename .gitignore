@@ -12,3 +12,4 @@ emacs-local.el
 
 # ignore downloaded, copied, or generated files
 schema/locate.rnc
+schema/xhtml1-strict.rnc

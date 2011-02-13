@@ -5,6 +5,7 @@ addition help)
 
 Current formats:
   nXML locating rules
+  XHTML 1.0 strict
  -->
 
 <locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
@@ -12,6 +13,10 @@ Current formats:
 
   <namespace ns="http://thaiopensource.com/ns/locating-rules/1.0"
 	     uri="locate.rnc"/>
+  <namespace ns="http://www.w3c.org/1999/xhtml" typeId="XHTML1"/>
 
   <documentElement localName="locatingRules" uri="locate.rnc"/>
+  <documentElement localName="html" typeId="XHTML1"/>
+
+  <typeId id="XHTML1" uri="xhtml1-strict.rnc"/>
 </locatingRules>

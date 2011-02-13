@@ -47,7 +47,7 @@
 
 ;; add file extensions to match for nXML mode 
 (setq auto-mode-alist 
-      (cons '("\\.\\(xml\\)\\'" . nxml-mode) auto-mode-alist))
+      (cons '("\\.\\(xml\\|x?html\\)\\'" . nxml-mode) auto-mode-alist))
 
  
 ;; Local Changes (not stored in version control)
