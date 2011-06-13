@@ -38,6 +38,11 @@
 
 ;; nXML mode customizations
 ;;
+
+;; override xmltok.el to add erb patch
+(eval-after-load "nxml-mode" 
+                 '(load (expand-file-name "xmltok.el" user-emacs-directory)))
+
 ;; redefine paths for schema files (don't use default installed schemas)
 (setq rng-schema-locating-files 
       (list "schemas.xml" 

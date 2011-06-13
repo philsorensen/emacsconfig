@@ -11,5 +11,8 @@ emacs-local.el
 *~
 
 # ignore downloaded, copied, or generated files
+downloads/
+
+xmltok.el
 schema/locate.rnc
 schema/xhtml1-strict.rnc
