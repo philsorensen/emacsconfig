@@ -42,9 +42,13 @@ if [ ! -r xmltok.el ]; then
     fi
     unzip -c $(basename ${nxhtml}) nxhtml/etc/schema/nxml-erb.patch >/tmp/xmltok.patch
     popd
-    
-    cp ${DATA}/../lisp/nxml/xmltok.el.gz
-    gunzip xmltok.el.gz
+
+    if [ -r ${DATA}../lisp/nxml/xmltok.el.gz ]; then
+        cp ${DATA}../lisp/nxml/xmltok.el.gz .
+        gunzip xmltok.el.gz
+    else
+        cp ${DATA}../lisp/nxml/xmltok.el .
+    fi
     patch </tmp/xmltok.patch
     rm xmltok.el.orig /tmp/xmltok.patch
 fi
