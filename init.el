@@ -13,7 +13,7 @@
 
 ;; Add ~/.emacs.d/ ( user-emacs-directory) to search path
 ;;
-(setq load-path (append load-path user-emacs-directory))
+(add-to-list ' load-path user-emacs-directory)
 
 
 ;; Global editor changes (some are defaults in later versions) 
@@ -51,10 +51,16 @@
       (expand-file-name "schema/locate.rnc" user-emacs-directory))
 
 ;; add file extensions to match for nXML mode 
-(setq auto-mode-alist 
-      (cons '("\\.\\(xml\\|x?html\\)\\'" . nxml-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.xml\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.x?html\\(\\.erb\\)?\\'" . nxml-mode))
 
- 
+;; add xml-fragment handling
+(require 'xml-fragment)
+(add-hook 'nxml-mode-hook 'xml-fragment-mode-on-maybe)
+(add-to-list 'xml-fragment-wrapper-alist
+	     '("\\.erb$" . xml-fragment-wrapper-xhtml1))
+
+
 ;; Local Changes (not stored in version control)
 ;;
 

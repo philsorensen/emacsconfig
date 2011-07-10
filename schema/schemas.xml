@@ -18,5 +18,7 @@ Current formats:
   <documentElement localName="locatingRules" uri="locate.rnc"/>
   <documentElement localName="html" typeId="XHTML1"/>
 
+  <uri pattern="*.erb" typeId="XHTML1"/>
+
   <typeId id="XHTML1" uri="xhtml1-strict.rnc"/>
 </locatingRules>
