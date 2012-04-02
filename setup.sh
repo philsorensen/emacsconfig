@@ -53,35 +53,6 @@ if [ ! -r xmltok.el ]; then
     rm xmltok.el.orig /tmp/xmltok.patch
 fi
 
-# download, patch, and byte compile xml-fragment mode
-xmlpath=http://emacsmode.googlecode.com/svn/trunk/person/epaulin/.emacs.d/libs
-
-if [ ! -f xml-fragment.el ]; then
-    curl -O ${xmlpath}/xml-fragment.el
-
-    cat >/tmp/xml-fragment.patch <<EOF
---- xml-fragment.el.orig	2011-07-10 16:23:14.024457880 -0400
-+++ xml-fragment.el	2011-07-10 16:22:37.577988661 -0400
-@@ -111,10 +111,6 @@
- Without ARG, toggle XML Fragment Mode.  With ARG, turn XML
- Fragment Mode on iff ARG is positive and off otherwise."
-   nil " Frag" nil
--  (when mmm-major-mode-hook
--    (add-hook 'mmm-major-mode-hook
--              'xml-fragment-twiddle-overlays
--              'append))
-   (if xml-fragment-mode
-       (let ((nxml-p (eq major-mode 'nxml-mode))
-             (fragment-p (xml-fragment-buffer-fragment-p))
-
-EOF
-    patch </tmp/xml-fragment.patch
-    rm /tmp/xml-fragment.patch
-fi
-if [ ! -f xml-fragment.elc ]; then
-    emacs -batch -f batch-byte-compile xml-fragment.el
-fi
-
 # copy schema files from emacs DATA directory
 for file in locate.rnc; do
     cp ${DATA}/schema/${file} schema/

@@ -54,19 +54,13 @@
 (add-to-list 'auto-mode-alist '("\\.xml\\'" . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\.x?html\\(\\.erb\\)?\\'" . nxml-mode))
 
-;; add xml-fragment handling
-(require 'xml-fragment)
-(add-hook 'nxml-mode-hook 'xml-fragment-mode-on-maybe)
-(add-to-list 'xml-fragment-wrapper-alist
-	     '("\\.erb$" . xml-fragment-wrapper-xhtml1))
-
 
 ;; Local Changes (not stored in version control)
 ;;
 
 ;; customizations interface
-(setq custom-file "~/.emacs.d/emacs-custom.el")
+(setq custom-file (expand-file-name "emacs-custom.el" user-emacs-directory))
 (load custom-file)
 
 ;; other local
-(load "~/.emacs.d/emacs-local.el")
+(load (expand-file-name "emacs-local.el" user-emacs-directory))
