@@ -58,27 +58,28 @@ for file in locate.rnc; do
     cp ${DATA}/schema/${file} schema/
 done
 
-# download and covert xhtml 1.0 dtd
-trang=http://jing-trang.googlecode.com/files/trang-20091111.zip
-xhtml=http://www.w3.org/TR/xhtml1/xhtml1.tgz
+# download xhtml5.rnc and patch from git://github.com/validator/schemas.git
+if [ ! -r schema/xhtml5.rnc ]; then
+    pushd schema
+    curl -O https://raw.github.com/validator/schemas/gh-pages/xhtml5.rnc
 
-if [ ! -f schema/xhtml1-strict.rnc ]; then
-    pushd downloads
-    if [ ! -r $(basename ${trang}) ]; then
-	curl -O ${trang}
-    fi
-    if [ ! -r $(basename ${xhtml}) ]; then
-	curl -O ${xhtml}
-    fi
-    cp $(basename ${trang}) /tmp/
-    cp $(basename ${xhtml}) /tmp/
-    popd
+    cat >/tmp/xhtml5.rnc.patch <<EOF
+--- xhtml5.rnc.orig	2012-04-07 21:57:15.438857554 -0400
++++ xhtml5.rnc	2012-04-07 22:44:58.056025877 -0400
+@@ -177,7 +177,8 @@
+     # REVISIT move style to a module and bundle tabindex with ARIA
+     common.attrs.accesskey =
+       attribute accesskey { common.data.keylabellist }
+-    common.attrs.other = empty
++    common.attrs.other = common.attrs.data
++      include "../html5-data.rnc"
+     # #####################################################################
+     
+     ##  Common Datatypes                                                  #
+EOF
+    patch xhtml5.rnc </tmp/xhtml5.rnc.patch
+    rm /tmp/xhtml5.rnc.patch
 
-    pushd /tmp
-    unzip $(basename ${trang})
-    tar -xzf $(basename ${xhtml})
-    java -jar trang*/trang.jar xhtml*/DTD/xhtml1-strict.dtd ${USER}/schema/xhtml1-strict.rnc
-    rm -rf  trang* xhtml*
     popd
 fi
 
@@ -90,7 +91,8 @@ fi
 # make symbolic links from templates to ~/Templates directory
 if [ -d ${HOME}/Templates ]; then
     for file in $(ls -1 templates); do
-	ln -sf ${USER}templates/${file} ~/Templates/${file}
+	cp ${USER}templates/${file} ~/Templates/${file}
+	chmod 444 ~/Templates/${file}
     done
 fi
 

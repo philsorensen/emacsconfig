@@ -3,9 +3,13 @@
 Custom schema locating file (see the documentation or default file for
 addition help)
 
-Current formats:
+Current specific formats:
   nXML locating rules
-  XHTML 1.0 strict
+  XHTML5 schema
+
+Glob rules:
+  file.xml uses file.rnc
+ 
  -->
 
 <locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
@@ -13,12 +17,13 @@ Current formats:
 
   <namespace ns="http://thaiopensource.com/ns/locating-rules/1.0"
 	     uri="locate.rnc"/>
-  <namespace ns="http://www.w3c.org/1999/xhtml" typeId="XHTML1"/>
+  <namespace ns="http://www.w3c.org/1999/xhtml" typeId="XHTML5"/>
 
   <documentElement localName="locatingRules" uri="locate.rnc"/>
-  <documentElement localName="html" typeId="XHTML1"/>
+  <documentElement localName="html" typeId="XHTML5"/>
 
-  <uri pattern="*.erb" typeId="XHTML1"/>
+  <uri pattern="*.html" typeId="XHTML5"/>
+  <uri pattern="*.xhtml" typeId="XHTML5"/>
 
-  <typeId id="XHTML1" uri="xhtml1-strict.rnc"/>
+  <typeId id="XHTML5" uri="xhtml5.rnc"/>
 </locatingRules>

@@ -1,0 +1,3 @@
+   common.attrs.data =
+      attribute data-target { string }?
+      & attribute data-toggle { string }?

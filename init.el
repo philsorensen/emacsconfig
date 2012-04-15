@@ -52,7 +52,10 @@
 
 ;; add file extensions to match for nXML mode 
 (add-to-list 'auto-mode-alist '("\\.xml\\'" . nxml-mode))
-(add-to-list 'auto-mode-alist '("\\.x?html\\(\\.erb\\)?\\'" . nxml-mode))
+(add-to-list 'auto-mode-alist '("\\.x?html\\'" . nxml-mode))
+
+;; modify coding for x?html files
+(modify-coding-system-alist 'file "\\.x?html\\'" 'utf-8-with-signature)
 
 
 ;; Local Changes (not stored in version control)
