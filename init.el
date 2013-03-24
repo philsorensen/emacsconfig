@@ -1,13 +1,13 @@
 ;;
 ;; init.el file
 ;;
-;; This file is in the .emacs.d directory where it is under git.  You need
-;; make sure that there is either no ~/.emacs file or the this file is
-;; linked to ~/.emacs.
+;; This file is in the .emacs.d directory where it is under git.  You
+;; need make sure that there is either no ~/.emacs file or the this file
+;; is linked to ~/.emacs.
 ;;
-;; Current file is designed for versions 23.2 (possibly later).  Variables
-;; and functions should be checked for new defaults, additions, etc. when
-;; old versions are dropped or added.
+;; Current file is designed for versions 24.1 or later.  Variables
+;; and functions should be checked for new defaults, additions,
+;; etc. when old versions are dropped or added.
 ;;
 
 
@@ -26,6 +26,7 @@
 ;;
 ;; define default styles
 (setq c-default-style '((c-mode . "k&r")
+			(c++-mode . "stroustrup")
 			(java-mode . "java")
 			(awk-mode . "awk")
 			(other . "gnu")))

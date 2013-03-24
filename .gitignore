@@ -3,6 +3,9 @@ auto-save-list/
 session.*
 elpa/
 
+# ignore orher status/cache files
+ac-comphist.dat
+
 # ignore local custimization files
 emacs-custom.el
 emacs-local.el
