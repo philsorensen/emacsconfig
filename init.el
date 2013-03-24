@@ -13,7 +13,7 @@
 
 ;; Add ~/.emacs.d/ ( user-emacs-directory) to search path
 ;;
-(add-to-list ' load-path user-emacs-directory)
+(add-to-list 'load-path user-emacs-directory)
 
 
 ;; Global editor changes (some are defaults in later versions) 
@@ -40,6 +40,7 @@
 	    (add-to-list 'c-hanging-braces-alist '(class-open . (after)))
 	    (add-to-list 'c-hanging-braces-alist '(inline-open . (after)))))
 
+
 ;; nXML mode customizations
 ;;
 
@@ -60,6 +61,16 @@
 
 ;; modify coding for x?html files
 (modify-coding-system-alist 'file "\\.x?html\\'" 'utf-8-with-signature)
+
+
+;; package install 
+;;
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-hook 'after-init-hook
+	  (lambda ()
+	    (load (expand-file-name "packages.el" user-emacs-directory))))
 
 
 ;; Local Changes (not stored in version control)

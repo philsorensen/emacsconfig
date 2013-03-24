@@ -1,6 +1,7 @@
-# ignore auto-save-list directory
-auto-save-list
+# ignore auto-save-list and elpa directories created by emacs
+auto-save-list/
 session.*
+elpa/
 
 # ignore local custimization files
 emacs-custom.el
