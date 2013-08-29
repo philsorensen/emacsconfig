@@ -2,6 +2,8 @@
 ;; Setup for packages installed with package.el
 ;;
 
+(package-initialize)
+
 ;; setup melpa
 (unless (package-installed-p 'melpa)
   (switch-to-buffer
