@@ -42,16 +42,6 @@
 	    (add-to-list 'c-hanging-braces-alist '(inline-open . (after)))))
 
 
-;; package install 
-;;
-(require 'package)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-hook 'after-init-hook
-	  (lambda ()
-	    (load (expand-file-name "packages.el" user-emacs-directory))))
-
-
 ;; Local Changes (not stored in version control)
 ;;
 
