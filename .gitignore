@@ -1,21 +1,14 @@
 # ignore auto-save-list and elpa directories created by emacs
 auto-save-list/
-session.*
 elpa/
 
 # ignore orher status/cache files
 ac-comphist.dat
+session.*
 
-# ignore local custimization files
-emacs-custom.el
-emacs-local.el
+# ignore local customization file
+local.el
 
 # ignore backup files, compiled files, etc
 *.elc
 *~
-
-# ignore downloaded, copied, or generated files
-xmltok.el
-downloads/
-schema/locate.rnc
-schema/xhtml5.rnc
