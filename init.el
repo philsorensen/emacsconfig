@@ -63,6 +63,9 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 
+(require 'old)
+
+
 
 ;;;; Local Customizations (not stored in version control)
 
