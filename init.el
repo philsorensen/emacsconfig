@@ -63,6 +63,13 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 
+(require 'appearance)
+
+;; global modes/loads 
+(require 'init-speedbar)
+(require 'autocomplete)
+
+
 (require 'old)
 
 
