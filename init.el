@@ -73,7 +73,9 @@ re-downloaded in order to locate PACKAGE."
 (require 'old)
 
 
+;;;; Local Customization (not stored in version control)
 
-;;;; Local Customizations (not stored in version control)
-
-(load (expand-file-name "local.el" user-emacs-directory))
+(let ((local-file (expand-file-name "local.el" user-emacs-directory)))
+  (when (not (file-exists-p local-file))
+    (shell-command (concat "touch " local-file)))
+  (load local-file))
