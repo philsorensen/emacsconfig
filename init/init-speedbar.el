@@ -9,7 +9,7 @@
 (setq speedbar-use-images nil)
 
 ;; key binding
-(global-set-key (kbd "C-c s") 'sr-speedbar-toggle)
+(global-set-key (kbd "C-c f") 'sr-speedbar-toggle)
 
 
 ;; on window systems adjust frame width 
