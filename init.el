@@ -69,6 +69,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'init-speedbar)
 (require 'autocomplete)
 
+(require 'programming)
 
 (require 'old)
 
