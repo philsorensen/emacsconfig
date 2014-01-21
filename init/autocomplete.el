@@ -1,4 +1,4 @@
-;; autocomplete.el --- setup auto-complete package
+;;; autocomplete.el --- setup auto-complete package
 
 (require-package 'auto-complete)
 
