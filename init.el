@@ -63,6 +63,7 @@ re-downloaded in order to locate PACKAGE."
 (add-to-list 'load-path (expand-file-name "init" user-emacs-directory))
 
 
+(require 'defaults)
 (require 'appearance)
 
 ;; global modes/loads 
