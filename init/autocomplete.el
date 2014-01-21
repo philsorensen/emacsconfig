@@ -15,5 +15,12 @@
 ;; defaults for now
 (ac-config-default)
 
+;; add overrides
+(after 'flyspell
+  (ac-flyspell-workaround))
+
+(after 'linum
+  (ac-linum-workaround))
+
 
 (provide 'autocomplete)
