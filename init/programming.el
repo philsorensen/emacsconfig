@@ -1,5 +1,17 @@
 ;;; programming.el --- setup programming modes
 
+;;;; setup of various language related packages
+
+;; yasnippet
+(require-package 'yasnippet)
+(require 'yasnippet)
+
+(yas-global-mode 1)    ; turn on global to initialize
+(yas-global-mode 0)    ; turn off globally 
+
+
+;;;; hooks and setup for languages
+
 ;; setup for all programming modes
 (add-hook 'prog-mode-hook
           (lambda ()
