@@ -9,6 +9,9 @@ session.*
 # ignore local customization file
 local.el
 
+# ignore node installed files
+node_modules/
+
 # ignore backup files, compiled files, etc
 *.elc
 *~
