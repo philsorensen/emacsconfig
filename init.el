@@ -71,6 +71,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'autocomplete)
 
 (require 'programming)
+(require 'webmode)
 
 (require 'old)
 

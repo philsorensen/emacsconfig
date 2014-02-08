@@ -1,5 +1,10 @@
 ;;; programming.el --- setup programming modes
 
+;; This file contains setup for major modes derived from prog-mode.  The one
+;; exception is web-mode which has been broken out into it's own file, and some
+;; options are not applied.
+
+
 ;;;; setup of various language related packages
 
 ;; yasnippet
@@ -32,11 +37,13 @@
             (setq indent-tabs-mode nil)
             (setq require-final-newline t)
 
-            ;; auto-fill and spell-check comments
-            (setq-local fill-column 80)
-            (setq-local comment-auto-fill-only-comments t)
-            (auto-fill-mode)
-            (flyspell-prog-mode)))
+            ;; auto-fill and spell-check comments (ignore for web-mode)
+            (unless (equal major-mode "web-mode")
+              (setq-local fill-column 80)
+              (setq-local comment-auto-fill-only-comments t)
+              (auto-fill-mode)
+              (flyspell-prog-mode))))
+
 
 ;; javascript - js-mode
 (require-package 'flymake-cursor)
