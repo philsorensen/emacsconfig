@@ -3,8 +3,11 @@
 ;; HTML/Templates/CSS/Javascript setups
 
 (require-package 'web-mode)
+(require-package 'emmet-mode)
+
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
 
 (defun web-mode-flyspefll-verify ()
   (let ((f (get-text-property (- (point) 1) 'face)))
@@ -24,11 +27,25 @@
                ))))
 (put 'web-mode 'flyspell-mode-predicate 'web-mode-flyspefll-verify)
 
+
+(defun emmet-tab-expand ()
+  (interactive)
+  (emmet-expand-line nil)
+  (indent-for-tab-command))
+
+
 (add-hook 'web-mode-hook
           (lambda()
             (setq-local fill-column 72)
             (auto-fill-mode 1)
-            (flyspell-mode 1)))
+            (flyspell-mode 1)
+            (emmet-mode 1)))
+
+(add-hook 'emmet-mode-hook
+          (lambda()
+            (setq emmet-preview-default nil)
+            (setq emmet-indentation 2)
+            (define-key emmet-mode-keymap (kbd "TAB") 'emmet-tab-expand)))
 
 
 (provide 'webmode)
