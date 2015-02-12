@@ -73,6 +73,7 @@ re-downloaded in order to locate PACKAGE."
 (require 'programming)
 (require 'webmode)
 
+(require 'other)
 (require 'old)
 
 
