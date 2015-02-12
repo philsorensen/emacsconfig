@@ -4,9 +4,12 @@
 
 (require-package 'web-mode)
 (require-package 'emmet-mode)
+(require-package 'scss-mode)
 
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(setq web-mode-engines-alist
+      '(("django" . "\\.html\\'")))
 
 
 (defun web-mode-flyspefll-verify ()
@@ -28,24 +31,24 @@
 (put 'web-mode 'flyspell-mode-predicate 'web-mode-flyspefll-verify)
 
 
-(defun emmet-tab-expand ()
-  (interactive)
-  (emmet-expand-line nil)
-  (indent-for-tab-command))
-
-
 (add-hook 'web-mode-hook
           (lambda()
-            (setq-local fill-column 72)
+            (setq-local fill-column 80)
             (auto-fill-mode 1)
             (flyspell-mode 1)
-            (emmet-mode 1)))
+            (emmet-mode 1)
+            (setq web-mode-markup-indent-offset 2)))
 
 (add-hook 'emmet-mode-hook
           (lambda()
             (setq emmet-preview-default nil)
-            (setq emmet-indentation 2)
-            (define-key emmet-mode-keymap (kbd "TAB") 'emmet-tab-expand)))
+            (setq emmet-indentation 2)))
+
+(add-hook 'sccs-mode-hook
+          (lambda()
+            ;; TODO: flymake setup (node-sass)
+            (add-to-list 'ac-source 'ac-source-css-property)))
+(add-to-list 'ac-modes 'scss-mode)
 
 
 (provide 'webmode)
