@@ -5,7 +5,7 @@
 (line-number-mode t)
 
 ;; Set frame parameters for non-console windows
-(when window-system
+(when (eq window-system 'x)
   ;; enable menu
   (menu-bar-mode 1)
 
@@ -17,7 +17,7 @@
   (setq font-use-system-font t)
 
   ;; set frame size
-  (add-to-list 'default-frame-alist '(width . 85))
+  (add-to-list 'default-frame-alist '(width . 84))
   (add-to-list 'default-frame-alist '(height . 40)))
 
 
