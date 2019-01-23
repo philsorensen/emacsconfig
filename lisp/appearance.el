@@ -4,7 +4,7 @@
 (column-number-mode t)
 (line-number-mode t)
 
-;; Set frame parameters for non-console windows
+;; Set frame appearance for non-console windows
 (when (eq window-system 'x)
   ;; enable menu
   (menu-bar-mode 1)
@@ -17,8 +17,15 @@
   (setq font-use-system-font t)
 
   ;; set frame size
-  (add-to-list 'default-frame-alist '(width . 84))
-  (add-to-list 'default-frame-alist '(height . 40)))
+  (setq initial-frame-alist
+	'((width . 85)
+	  (height . 40)))
+
+  (setq default-frame-alist
+	'((width . 85)
+	  (height . 40)))
+
+  (set-frame-size nil 85 40))
 
 
 (provide 'appearance)

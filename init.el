@@ -26,7 +26,6 @@
 ;; No startup screen
 (setq inhibit-startup-screen t)
 
-
 ;; Customizations in separate files
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
@@ -75,14 +74,14 @@
 
 ;;;; load modular init pieces
 
-;; Add ~/.emacs.d/init to search path
+;; Add ~/.emacs.d/lisp to search path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-
+;; load files
 (require 'defaults)
 (require 'appearance)
 
-;; global modes/loads 
+
 ;(require 'init-speedbar)
 ;(require 'autocomplete)
 
