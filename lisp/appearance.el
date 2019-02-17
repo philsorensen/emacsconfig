@@ -18,12 +18,12 @@
 
   ;; set frame size
   (setq initial-frame-alist
-	'((width . 85)
-	  (height . 40)))
+        '((width . 85)
+          (height . 40)))
 
   (setq default-frame-alist
-	'((width . 85)
-	  (height . 40)))
+        '((width . 85)
+          (height . 40)))
 
   (set-frame-size nil 85 40))
 
