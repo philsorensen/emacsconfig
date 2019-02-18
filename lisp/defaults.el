@@ -9,6 +9,9 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 
+;; set fill parameters
+(setq-default fill-column 80)
+
 ;; setup spell checker program and arguments (prefer prefer aspell)
 (cond
  ((executable-find "aspell")

@@ -85,7 +85,7 @@
 ;(require 'init-speedbar)
 ;(require 'autocomplete)
 
-;(require 'programming)
+(require 'prog-generic)
 ;(require 'webmode)
 
 ;(require 'other)
