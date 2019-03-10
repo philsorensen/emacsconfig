@@ -80,10 +80,9 @@
 ;; load files
 (require 'defaults)
 (require 'appearance)
-
+(require 'completion)
 
 ;(require 'init-speedbar)
-;(require 'autocomplete)
 
 (require 'prog-generic)
 ;(require 'webmode)
