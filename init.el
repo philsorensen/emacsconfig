@@ -26,11 +26,14 @@
 ;; No startup screen
 (setq inhibit-startup-screen t)
 
-;; Customizations in separate files
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+;; Customizations in separate file
+(let ((customization-file (expand-file-name "custom.el" user-emacs-directory)))
+  (when (not (file-exists-p customization-file))
+    (shell-command (concat "touch " customization-file)))
+  (setq custom-file customization-file)
+  (load custom-file))
 
-;; Local settings (not stored in version control)
+;; Non-Cumstomization local settings
 (let ((local-file (expand-file-name "local.el" user-emacs-directory)))
   (when (not (file-exists-p local-file))
     (shell-command (concat "touch " local-file)))
